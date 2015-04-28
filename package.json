@@ -1,13 +1,13 @@
 {
   "name": "9e-sass-lint",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Makes sure you stick to our CSS rule order http://9elements.com/css-rule-order/",
   "main": "index.js",
   "bin": {
     "9e-sass-lint": "lib/cmd.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test node_modules/.bin/mocha --require should --reporter spec test/*.test.js"
   },
   "keywords": [
     "sass",
@@ -23,5 +23,9 @@
     "glob": "^5.0.5",
     "underscore": "^1.8.3",
     "yargs": "^3.8.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.4",
+    "should": "^6.0.1"
   }
 }

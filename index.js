@@ -22,3 +22,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
+
+var Linter = require('./lib/linter')
+var File = require('./lib/file')
+
+module.exports = {
+  /**
+   * Lints the given source code
+   * @param  {String} code
+   * @return {Promise}
+   */
+  lint: function (code) {
+    var linter = new Linter()
+    var file = new File('file', code)
+    return linter.lintFile(file)
+  },
+
+  /**
+   * Lints the given file
+   * @param  {String} filePath
+   * @return {Promise}
+   */
+  lintFile: function (filePath) {
+    var linter = new Linter()
+    var file = new File(filePath)
+    return file.load()
+      .then(function () {
+        return linter.lintFile(file)
+      })
+  }
+}
