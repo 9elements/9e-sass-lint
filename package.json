@@ -1,0 +1,27 @@
+{
+  "name": "9e-sass-lint",
+  "version": "0.0.1",
+  "description": "Makes sure you stick to our CSS rule order http://9elements.com/css-rule-order/",
+  "main": "index.js",
+  "bin": {
+    "9e-sass-lint": "lib/cmd.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sass",
+    "css",
+    "lint",
+    "rules"
+  ],
+  "author": "Sascha Gehlich <sascha@gehlich.us>",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.25",
+    "get-stdin": "^4.0.1",
+    "glob": "^5.0.5",
+    "underscore": "^1.8.3",
+    "yargs": "^3.8.0"
+  }
+}
