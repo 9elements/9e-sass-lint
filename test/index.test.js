@@ -8,10 +8,9 @@ describe('9e-sass-lint', function () {
       var data = fs.readFileSync('./test/fixtures/test.sass').toString()
       SASSLint.lint(data)
         .then(function (report) {
-          report.length.should.equal(3)
+          report.length.should.equal(2)
           report[0].error.should.equal('Property `top` should be defined before property `color` in line 6')
           report[1].error.should.equal('Property `left` should be defined before property `color` in line 6')
-          report[2].error.should.equal('Mixin should be defined before property `color` in line 11')
           done()
         })
     })
@@ -21,10 +20,9 @@ describe('9e-sass-lint', function () {
     it('should lint the given file and return a report', function (done) {
       SASSLint.lintFile('test/fixtures/test.sass')
         .then(function (report) {
-          report.length.should.equal(3)
+          report.length.should.equal(2)
           report[0].error.should.equal('Property `top` should be defined before property `color` in line 6')
           report[1].error.should.equal('Property `left` should be defined before property `color` in line 6')
-          report[2].error.should.equal('Mixin should be defined before property `color` in line 11')
           done()
         })
     })
