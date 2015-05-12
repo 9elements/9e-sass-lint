@@ -12,4 +12,14 @@ describe('bugs', function () {
         })
     })
   })
+
+  describe('-vendor-prefixes', function () {
+    it('should not fail', function (done) {
+      var data = fs.readFileSync('./test/fixtures/prefixes.sass').toString()
+      SASSLint.lint(data)
+        .then(function (report) {
+          done()
+        })
+    })
+  })
 })
