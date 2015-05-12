@@ -1,6 +1,6 @@
 {
   "name": "9e-sass-lint",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Makes sure you stick to our CSS rule order http://9elements.com/css-rule-order/",
   "main": "index.js",
   "bin": {
