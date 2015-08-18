@@ -33,9 +33,13 @@ module.exports = {
    * @return {Promise}
    */
   lint: function (code) {
-    var linter = new Linter()
-    var file = new File('file', code)
-    return linter.lintFile(file)
+    if (!!code) {
+      var linter = new Linter()
+      var file = new File('file', code)
+      return linter.lintFile(file)
+    } else {
+      return Promise.resolve(true)
+    }
   },
 
   /**
